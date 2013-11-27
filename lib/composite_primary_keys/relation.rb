@@ -57,7 +57,7 @@ module ActiveRecord
           }
 
           Hash[equalities.map { |where| [where.left.name, where.right] }]
-        end
+        end unless defined?(Squeel)
       end
     end
 

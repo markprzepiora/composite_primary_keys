@@ -109,4 +109,9 @@ class TestCreate < ActiveSupport::TestCase
     assert_equal(25, suburb.suburb_id)
     assert_equal("My Suburb", suburb.name)
   end
+
+  def test_first_or_initialize
+    ref_code = ReferenceCode.where(abbreviation: 'Herr').first_or_initialize
+    assert_equal('Herr', ref_code.abbreviation)
+  end
 end
